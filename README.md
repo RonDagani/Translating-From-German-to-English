@@ -5,7 +5,7 @@ In this project we used T5 model in order to translating sentences from German t
     - [Background](#background)
 3. [Program Structure](#Program-Structure)
     - [Network Structure](#Network-Structure)
-    - [Improvement Trails](#Improvement Trails)
+    - [Improvement Trails](#Improvement-Trails)
 5. [Installation](#Installation)
 
 ## General
@@ -46,7 +46,7 @@ The linear layers dims decoder:
 * The linear layers also include leaky relu function. 
 * We used reparameterization trick for continuous variables and Gumbel SoftMax for the discrete variables.  
 
-## Improvement Trails
+## Improvement-Trails
 
 In order to improve the blue score, we thought that because blue biggest weakness is that it can't understand that 2 words are synonyms. 
 Therefore, getting the roots and modifiers exact words, can help us increase the blue score if we'll replace the predicted roots and modifiers with the real one. This way, we can ensure that the those will get a positive blue score and won’t be considered wrong while having a very similar meaning. 
@@ -54,20 +54,9 @@ So in order to implement it, we tried finding the best method to switch the give
 
  
 
-First, Bert-score: that as known, refers to that exact same problem. Bert-
-score uses cosine similarity between the embedded tokens of the word in 
-the sentences in order to calculate its score, based on the idea that similar 
- words would get a bigger cosine similarity after pretrained embedding. 
-We also read about other methods of similarity score other then cosine 
-similarity for text evaluation and made sure it is the best method to use. 
-We used those ideas to find the similarity between the given 
- modifiers\roots and predicted modifiers\roots.
-After finding how similar each pair of predicted and given word is, we 
-faced the problem of how to pick the replacement strategy. As expected, 
-we want to take the max similar for each one, but what about the cases 
-where 2 words got the same argmax? inspired by Active learning's 
-uncertainty method of smallest margin calculation, where we can give a 
-certainty score by calculating how much the model is confident in its 
+First, Bert-score: that as known, refers to that exact same problem. Bert-score uses cosine similarity between the embedded tokens of the word in the sentences in order to calculate its score, based on the idea that similar words would get a bigger cosine similarity after pretrained embedding. 
+We also read about other methods of similarity score other then cosine similarity for text evaluation and made sure it is the best method to use. We used those ideas to find the similarity between the given modifiers\roots and predicted modifiers\roots.
+After finding how similar each pair of predicted and given word is, we faced the problem of how to pick the replacement strategy. As expected, we want to take the max similar for each one, but what about the cases where 2 words got the same argmax? inspired by Active learning's uncertainty method of smallest margin calculation, where we can give a certainty score by calculating how much the model is confident in its 
 prediction we implemented the method and understood this solution is not 
 good enough because each replacement may cause a new conflict over and 
 over again. When, we understood we're facing a "Perfect Match Problem" 
