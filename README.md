@@ -32,7 +32,7 @@ The parameters that were chosen were:
 * generation_max_length = 210
 * gradient_accumulation_steps = 16
 
-<img src="[https://i.imgur.com/JzaBhBb.png](https://i.imgur.com/WJJmZuh.png)" width = 50% height=30%>
+<img src="https://i.imgur.com/WJJmZuh.png" width = 50% height=30%>
 
 The dims of the convolution are 3-32-64, padding is 1 and stride is 2 and every convolution layer also includes Leaky relu function in both encoder and decoder. 
 
