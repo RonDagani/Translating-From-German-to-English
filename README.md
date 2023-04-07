@@ -46,7 +46,7 @@ The linear layers dims decoder:
 * The linear layers also include leaky relu function. 
 * We used reparameterization trick for continuous variables and Gumbel SoftMax for the discrete variables.  
 
-### Improvement Trails
+## Improvement Trails
 
 In order to improve the blue score, we thought that because blue biggest weakness is that it can't understand that 2 words are synonyms. 
 Therefore, getting the roots and modifiers exact words, can help us increase the blue score if we'll replace the predicted roots and modifiers with the real one. This way, we can ensure that the those will get a positive blue score and won’t be considered wrong while having a very similar meaning. 
