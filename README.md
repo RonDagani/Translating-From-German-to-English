@@ -18,15 +18,21 @@ Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan
 Narang, Michael Matena, Yanqi Zhou, Wei Li, Peter J. Liu](https://arxiv.org/pdf/1910.10683.pdf) on 2020 
 
 ## Program Structure
-* models.py - Creation of the VAE netowrk.
-* main.py - loads a existing model or create one and plot visualizations of it
-* visualizations.py - Responible for the visualizations of the model.
-* training.py - trains the model
+* main_model.py - The main file where the model is defined and trained
+* generate_comp_tagged.py - Uses the trained model to translate val and comp files.
+* preprocess.py - Defnies a dataset used later out of file.
+* project_evaluate.py - Defnies functions used to evalute the model
 
 ### Network-Structure
-The VAE network is described as follows: 
+We found that using ada-factor optimization helped the performance of the model.
+The parameters that were chosen were:
+* Batch size = 2
+* learning_rate = 0.0005
+* num_train_epochs = 10 
+* generation_max_length = 210
+* gradient_accumulation_steps = 16
 
-<img src="https://i.imgur.com/JzaBhBb.png" width = 50% height=50%>
+<img src="[https://i.imgur.com/JzaBhBb.png](https://i.imgur.com/WJJmZuh.png)" width = 50% height=50%>
 
 The dims of the convolution are 3-32-64, padding is 1 and stride is 2 and every convolution layer also includes Leaky relu function in both encoder and decoder. 
 
