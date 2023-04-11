@@ -75,7 +75,7 @@ In addition, we tried giving the roots and modifiers to the model, from the unla
 ```
     $ git clone https://github.com/elaysason/Translating-From-German-to-English-.git
 ```
-3. Train the mdeol with main_model.py file by:
+3. Train the model with main_model.py file by:
 ```
     $ python main_model.py
 ```
