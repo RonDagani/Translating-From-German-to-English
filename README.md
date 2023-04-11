@@ -73,9 +73,13 @@ In addition, we tried giving the roots and modifiers to the model, from the unla
 
 2. Clone the project by:
 ```
-    $ git clone https://github.com/elaysason/Generative-Learning-With-Discrete-and-Continuous-VAE.git
+    $ git clone https://github.com/elaysason/Translating-From-German-to-English-.git
 ```
-3. Run the main.py file by:
+3. Train the mdeol with main_model.py file by:
 ```
-    $ python main.py
+    $ python main_model.py
+```
+4. Use the trained model to translate:
+```
+    $ python generate_comp_tagged.py
 ```
