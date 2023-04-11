@@ -73,7 +73,7 @@ In addition, we tried giving the roots and modifiers to the model, from the unla
 
 2. Clone the project by:
 ```
-    $ git clone https://github.com/elaysason/Translating-From-German-to-English-.git
+    $ git clone https://github.com/elaysason/Translating-From-German-to-English.git
 ```
 3. Train the model with main_model.py file by:
 ```
